@@ -416,7 +416,7 @@
                 break;
 
             default:
-                return date("Y-m-d",strtotime($the_time));
+                return date("Y-m-d");
                 break;
         }
         return $the_time;

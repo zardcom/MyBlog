@@ -25,12 +25,13 @@ function  createArticleItem(topicData)
 
     var topicStr =["                        <div class=\"topic-item\">",
         "                            <div class=\"topic-item-user-head\">",
-        "                                <a class=\"info\" href=\"#\"><img class=\"common-round-img\" src=\"img/22.png\" width=\"48px\" height=\"48px\"></a>",
+        "                                <a  class=\"info\" href=\"#\"><img class=\"common-round-img\" src=\"img/head/head0.jpg\" width=\"48px\" height=\"48px\"></a>",
         "                            </div>",
         "                            <div class=\"topic-item-body\">",
         "                                <div class=\"div-a-s1\"><a href=\"#\">我是文章标题-第一章</a></div>",
         "                                <div class=\"topic-item-info\">",
         "                                    <div class=\"info1\"><a class=\"common-a-s2\" href=\"#\">作者</a></div>",
+        "                                    <div class=\"info5 common-gray-charater\"><p>2005-22-1</p></div>",
         "                                    <div class=\"info2 common-gray-charater\"><p> . 10分钟前 . 最后回复来自 . </p></div>",
         "                                    <div class=\"info3\"><a class=\"common-a-s2\" href=\"#\">回复者</a></div>",
         "                                </div>",
@@ -58,13 +59,23 @@ function  createArticleItem(topicData)
     head_elem.setAttribute("href","/html/userInfo.html?action=get_user_info&user_name="+topic_author);
     div.getElementsByClassName("common-round-img")[0].setAttribute("src","/img/head/"+user_head);
 
+    div.getElementsByClassName("info5")[0].getElementsByTagName("p")[0].innerText = publish_time;
 
-    div.getElementsByClassName("info2")[0].getElementsByTagName("p")[0].innerText= " .于" + topic_reply_time + " .最后回复来自于. ";
+    if(reply_count <=0 )
+    {
+        div.getElementsByClassName("info2")[0].style.display = "none";
+        div.getElementsByClassName("info3")[0].style.display = "none";
+    }
+    else
+    {
+        div.getElementsByClassName("info2")[0].getElementsByTagName("p")[0].innerText= " .于" + topic_reply_time + " .最后回复来自于. ";
+        var reply_user_elem =  div.getElementsByClassName("info3")[0].getElementsByTagName("a")[0];
+        reply_user_elem.innerText = reply_member;
+        reply_user_elem.setAttribute("href","/html/userInfo.html?action=get_user_info&user_name="+reply_member);
+    }
 
-    var reply_user_elem =  div.getElementsByClassName("info3")[0].getElementsByTagName("a")[0];
-    reply_user_elem.innerText = reply_member;
-    reply_user_elem.setAttribute("href","/html/userInfo.html?action=get_user_info&user_name="+reply_member);
-    //div.getElementsByClassName("info3")[0].getElementsByTagName("a")[0].innerText= reply_member;
+
+
     div.getElementsByClassName("info4")[0].innerText= reply_count;
 }
 
