@@ -122,6 +122,9 @@
         if(isset($_SESSION["userInfo"]))
         {
             $arr = $_SESSION["userInfo"];
+
+            writeLastLoginTime($_SESSION["userInfo"]["uid"]);
+
             $arr["state"] = 1;
             $jsInfo = json_encode($arr);
             echo $jsInfo;
@@ -132,6 +135,15 @@
             $jsInfo = json_encode($arr);
             echo $jsInfo;
         }
+    }
+
+    //记录成员最后登入时间
+    function writeLastLoginTime($user_id)
+    {
+        $uid = $user_id;
+        $sql_query = "update user set last_login = now() where uid= '$uid'";
+        $result = mysql_query($sql_query);
+
     }
 
 
