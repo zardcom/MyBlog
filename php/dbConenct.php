@@ -18,11 +18,11 @@
 
 
 
-    //检查用户名是否符合规定 (两个字符以上，字母，数字，下划线的)
+    //检查用户名是否符合规定 (两个字符以上，字母，中文，数字，下划线的)
     function is_username($user_name)
     {
-     //   $str = "/^[a-zA-Z0-9_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]+$/";
-        $str = "/^[\w-\.]{2,16}$/";
+        $str = "/^[a-zA-Z0-9_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]+$/";
+      //  $str = "/^[\w-\.]{2,16}$/";
         if(!preg_match($str, $user_name))
         {
             return false;
