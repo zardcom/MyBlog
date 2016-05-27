@@ -1,0 +1,419 @@
+html,body,p,h1,h2,h3,h4,h5,h6,ul,li
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,body
+{
+    height:100%;
+    background-color: #e5e7e7;
+    font-family: 'Microsoft Yahei',verdana;
+    font-size: 16px;
+}
+
+.clear:after
+{
+    display: block;
+    content: '';
+    clear: both;
+    visibility: hidden;
+}
+
+
+/*一些颜色统一
+ border-bottom: #d9d9d9 solid 1px;//底线类型
+ box-shadow:1px 1px 3px 2px #ccc;//阴影
+   font-size: 16px;//a默认字体16
+       background-color: #dddddd;//标签颜色
+*/
+
+
+/*通用顶部栏*/
+.common-head-bar-s1
+{
+    background-color: #cacac2;
+    padding: 5px;
+    text-align: center;
+    font-family: 'Microsoft Yahei',verdana;
+    font-size:16px;
+}
+
+/*通用引用盒子*/
+.common-box-shadow
+{
+    /*第1个值：水平阴影的长度，此值可以为负值  第2个值：垂直阴影的长度，此值可以为负值。 第3个值：阴影的模糊值，此值不允许为负值。
+     第4个值：水平阴影的外延值，此值可以为负值。第5个值：阴影的颜色。第6个值：此值为空，默认为外阴影，设置成inset为内阴影。*/
+    box-shadow:1px 1px 4px 1px #ccc;
+}
+
+
+/*通用面板list*/
+.common-group-list
+{
+    text-align: center;
+    list-style: none;
+}
+
+.common-group-list li
+{
+    padding: 5px;
+    border-bottom: #d9d9d9 solid 1px;
+}
+
+.common-hor-list
+{
+    text-align: center;
+    list-style: none;
+}
+.common-hor-list li
+{
+    display: inline-block;
+}
+
+/*通用图片*/
+.common-round-img
+{
+    border-radius: 6px;
+    border: none;
+}
+
+/*通用图片*/
+.common-round-border-img
+{
+    border-radius: 6px;
+    border: 1px solid cornsilk;
+    box-shadow:1px 1px 4px 1px #ccc;
+}
+
+/*冒泡三角形*/
+.common-triangle-1
+{
+    width:0;
+    height:0;
+    border-width:15px 10px;
+    border-style:solid;
+    border-color: #ffffff #ffffff transparent transparent;
+    padding: 0;
+    margin-right: -10px;
+}
+
+/*a标签通用链接*/
+.common-gray-charater
+{
+    color: #b1b1b1;
+    font-size: 14px;
+}
+
+.common-black-charater
+{
+    color: black;
+    font-size: 14px;
+}
+
+.common-a-s1
+{
+    padding: 4px;
+    font-size: 16px;
+}
+
+
+.common-a-s1:link, .common-a-s1:visited, .common-a-s1:active
+{
+    color: #585f66;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.common-a-s1:hover
+{
+    color: #ed7c90;
+    text-decoration: underline;
+}
+
+.common-a-s2
+{
+    padding: 4px;
+    font-size: 14px;
+}
+
+.common-a-s2:link,.common-a-s2:visited,.common-a-s2:active
+{
+    color: black;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.common-a-s2:hover
+{
+    color: #ed7c90;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+
+
+.div-a-s1
+{
+}
+
+.div-a-s1 a
+{
+    padding: 4px;
+    font-size: 16px;
+}
+
+.div-a-s1 a:link,a:visited,a:active
+{
+    color: #585f66;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.div-a-s1 a:hover
+{
+    color: #ed7c90;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/*--------------------内容部分------------------------------*/
+.logo
+{
+    width: 48px;
+    height: 48px;
+    float: left;
+}
+
+.header
+{
+    min-width: 1100px;
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    top:0;
+    z-index: 1111;
+}
+
+.header-content
+{
+    min-width: 1100px;
+    width: 960px;
+    height:50px;
+    margin: 0 auto;
+    display: block;
+}
+
+.footer
+{
+    min-width: 1100px;
+    width: 100%;
+    background-color: white;
+    margin-top: 15px;
+}
+
+
+.navigation
+{
+    float: left;
+    line-height: 50px;
+    margin-left: 30px;
+}
+
+.navigation-right
+{
+    float: right;
+    line-height: 50px;
+}
+
+.search
+{
+    height: 50px;
+    width: 200px;
+    float: right;
+    margin-right: 30px;
+}
+
+.search input
+{
+    height: 26px;
+    width: 200px;
+    border-radius: 2px;
+    border: 1px solid #dbdbdb;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.main-content
+{
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    position: relative;
+    top:0;
+}
+
+.content
+{
+    min-width: 1100px;
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.left-box
+{
+
+    display: block;
+    float: left;
+}
+
+.left-box-content
+{
+    background-color: white;
+}
+
+
+.right-box
+{
+    display: block;
+    float: right;
+    width: 280px;
+}
+
+
+/*-------------右面板样式在这里哟------------------*/
+
+.right-all-sty
+{
+    margin-bottom: 20px;
+}
+
+/*--------------小部件在这里---------------*/
+.common-title-bar
+{
+    width: 100%;
+    height: 40px;
+    background-color: #b6b6b6;
+    display: block;
+}
+
+.common-title-bar .common-h3-title
+{
+    text-align: center;
+    padding-top: 7px;
+}
+
+
+.common-gray-btn
+{
+    background-color: #78838a;
+    color: white;
+    border-radius: 2px;
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.common-gray-btn:visited,.common-gray-btn:active,.common-gray-btn:link
+{
+    color: white;
+}
+
+.common-btn-size1
+{
+    font-size: 15px;
+    font-weight: bold;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+}
+
+.common-label
+{
+    border-radius: 7px;
+    background-color: #dddddd;
+    box-shadow:2px 2px 1px 2px #ccc;
+}
+
+/*--------------------------------------------------------通用tab-----------------------------------------------------*/
+
+/*tab外层div*/
+.common-div-menu
+{
+    font-family: 'Microsoft Yahei',verdana;
+    font-size:14px;
+    height: 36px;
+    width: 100%;
+}
+
+/*tab外层菜单*/
+.common-menu
+{
+    margin-left:12px;
+    color: rgb(106, 106, 106);
+}
+
+/*tab按钮*/
+.common-tab-btn
+{
+    float: left;
+    margin: 5px;
+    list-style: none;
+    width: 80px;
+    height:32px;
+    line-height:32px;
+    border: none;
+    border-radius: 2px;
+    background-color: #757575;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*tab激活*/
+.common-tab-btn-active
+{
+    color:#fff;
+    background-color: #b8b8b8;
+    cursor: default;
+}
+
+
+/*---------------分页栏----------------------*/
+.common-page-bar
+{
+    width: 800px;
+    height: 50px;
+    display: block;
+    background-color: #c6c6c6;
+    margin-top: 15px;
+}
+
+.common-page-btn
+{
+    float: left;
+    margin: 10px 5px 5px 5px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border: none;
+    border-radius: 2px;
+    background-color: #7a7a74;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.common-page-btn-active
+{
+    background-color: #dddddd;
+    color: #333;
+    cursor: default;
+}
+

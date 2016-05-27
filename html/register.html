@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../css/frameset.css" type="text/css" rel="stylesheet">
+    <link href="../css/index.css" type="text/css" rel="stylesheet">
+    <script src="/js/register.js"></script>
+    <title>用户注册</title>
+</head>
+<body>
+
+<!--#include file="header.html"-->
+
+<div class="main-content">
+    <div class="content">
+        <div class="minddle-box">
+            <div id="register" class="common-box-shadow">
+                <div id="register-bar"><h3>注册</h3></div>
+                    <form>
+                        <div class="register-input">
+                            <input id="username" type="text" name="username" value="" placeholder="用户:" onfocus="this.placeholder=''" onblur="this.placeholder='用户:'" >
+                        </div>
+                        <div class="register-input">
+                            <input id="password" type="password"  name="password" value="" placeholder="密码:" onfocus="this.placeholder=''" onblur="this.placeholder='密码:'">
+                        </div>
+
+                        <div class="register-input">
+                            <input id="passwordAgin" type="password"  name="passwordAgin" value="" placeholder="密码确认:" onfocus="this.placeholder=''" onblur="this.placeholder='密码确认:'">
+                        </div>
+                        <div class="register-input">
+                            <input id="mail" type="text"  name="mail" value="" placeholder="Email:" onfocus="this.placeholder=''" onblur="this.placeholder='Email:'">
+                        </div>
+                        <div class="register-input">
+                            <input id="verification" type="text" name="verification" value=""  placeholder="验证码:" onfocus="this.placeholder='' " onblur="this.placeholder='验证码:'">
+                        </div>
+                        <div style="height: 40px;margin-left: 440px;">
+                            <p style="display: inline-block;height: 35px;line-height: 35px;vertical-align: top; ">验证码:</p>
+                            <img id="v-code" style="display:inline-block;" src="/php/VerificationCode.php" onclick="refreshVerCode()">
+                        </div>
+                            <!--<input id="register-btn" type="button" name="submit" value="提交注册信息" onclick="onRegister()">-->
+                    </form>
+
+                <div  style="padding: 20px;">
+                    <a style="display: inline-block;margin-left: 50px;" class="common-gray-btn common-btn-size1 common-box-shadow" href="javascript:onRegister()">注册</a>
+                    <a class="common-a-s1" style="text-decoration: underline;  display:inline-block;margin-left: 350px;" href="/html/login.html">登录</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="#right-box"></div>
+        <div id="blank-box"></div>
+    </div>
+
+</div>
+
+<!--#include virtual="footer.html" -->
+
+
+</body>
+</html>

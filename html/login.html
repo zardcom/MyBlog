@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../css/frameset.css" type="text/css" rel="stylesheet">
+    <link href="../css/index.css" type="text/css" rel="stylesheet">
+    <title>用户登入</title>
+</head>
+<body>
+
+<!--#include virtual="header.html"-->
+
+<div class="main-content">
+    <div class="content">
+        <div class="minddle-box">
+            <div id="register" class="common-box-shadow">
+                <div id="register-bar"><h3>登入</h3></div>
+                <form >
+                    <div class="register-input">
+                        <input id="username" type="text" name="username" value="" placeholder="用户:" onfocus="this.placeholder=''" onblur="this.placeholder='用户:'" >
+                    </div>
+
+                    <div class="register-input">
+                        <input id="password" type="password"  name="password" value="" placeholder="密码:" onfocus="this.placeholder=''" onblur="this.placeholder='密码:'">
+                    </div>
+                    <!--<div class="register-input">-->
+                        <!--<input id="verification" type="text" name="verification" value=""  placeholder="验证码:" onfocus="this.placeholder='' " onblur="this.placeholder='验证码:'">-->
+                    <!--</div>-->
+                    <!--<input id="login-btn" type="button" onclick="login()" value="登入">-->
+                    <!--<a id="register-a" href="register.shtml">注册</a>-->
+                </form>
+                <div  style="padding: 20px;">
+                    <a style="display: inline-block;margin-left: 50px;" class="common-gray-btn common-btn-size1 common-box-shadow" href="javascript:login()">登入</a>
+                    <a class="common-a-s1" style="text-decoration: underline;  display:inline-block;margin-left: 350px;" href="/html/register.html">注册</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="#right-box"></div>
+        <div id="blank-box"></div>
+    </div>
+
+
+</div>
+
+<!--#include virtual="footer.html" -->
+
+
+
+</body>
+</html>

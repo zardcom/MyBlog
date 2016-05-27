@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../css/frameset.css" type="text/css" rel="stylesheet">
+    <script src="../js/myAjax.js"></script>
+    <script src="../js/publishTopic.js"></script>
+
+    <style type="text/css">
+
+
+    </style>
+
+
+    <title>发布新的文章</title>
+</head>
+<body>
+
+<!--#include virtual="header.html"-->
+
+<div class="main-content">
+    <div class="content">
+        <div class="middle-box common-box-shadow" style="background-color: white;">
+
+
+            <div class="common-title-bar">
+                <h3 class="common-h3-title">发表新话题</h3>
+            </div>
+
+            <!--<div style="display: block; width: 100%;background-color: white;margin-top: 10px">-->
+            <div style="width: 100%;height: 25px;margin: 20px auto;background-color: white">
+            <input id="topic-title" type="text" placeholder="在这里填写标题:" style="display:block; width:1000px; height: 25px; margin: 0px auto;">
+            </div>
+
+            <!--<textarea id="topic-content" style="border:1px solid blue;display: block;height: 400px;width: 1000px;margin: 20px auto;border-radius: 5px;"></textarea>-->
+
+            <!--</div>-->
+
+
+
+            <!-- 加载编辑器的容器 -->
+            <script id="container" name="content" type="text/plain">
+
+            </script>
+            <!-- 配置文件 -->
+            <script type="text/javascript" src="../ueditor1_4_3_2-utf8-php/utf8-php/ueditor.config.js"></script>
+            <!-- 编辑器源码文件 -->
+            <script type="text/javascript" src="../ueditor1_4_3_2-utf8-php/utf8-php/ueditor.all.js"></script>
+            <!-- 实例化编辑器 -->
+            <script type="text/javascript">
+                var ue = UE.getEditor('container');
+                var conText = "";
+                ue.ready(function() {
+                    //设置编辑器的内容
+                    //获取html内容，返回: <p>hello</p>
+                    var html = ue.getContent();
+                    //获取纯文本内容，返回: hello
+                    conText = ue.getContentTxt();
+                    console.log("adf: " + conText);
+                });
+
+            </script>
+
+            <!--<div style="border: 1px solid red;padding: 20px;">-->
+
+                <!--<input class="common-bule-btn" type="button" style="width: 140px; height: 25px" value="发布文章" onclick="publish()">-->
+            <!--</div>-->
+            <div style="height: 80px;">
+                <div  style="float: right; padding: 20px;">
+                    <a class="common-gray-btn common-btn-size1 common-box-shadow" href="javascript:publish()">发布文章</a>
+                </div>
+            </div>
+
+            <div id="btns">
+                <!--<div>-->
+                    <!--<button onclick="getAllHtml()">获得整个html的内容</button>-->
+                    <!--<button onclick="getContent()">获得内容</button>-->
+                    <!--<button onclick="getContentTxt()">获得纯文本</button>-->
+                <!--</div>-->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--#include virtual="footer.html"-->
+
+
+<script>
+
+
+    //测试用
+    function getContent()
+    {
+        var uex = UE.getEditor('container');
+        var cn = uex.getContent();
+        var arr = [];
+        arr.push("使用editor.getContent()方法可以获得编辑器的内容");
+        arr.push("内容为：");
+        arr.push(cn);
+        alert(arr.join("\n"));
+    }
+
+    //测试用
+    function getAllHtml()
+    {
+        alert(UE.getEditor('editor').getAllHtml())
+    }
+
+
+    //用post，get有限制不能超过2kb,post无限制，并且安全。
+    function  publish()
+    {
+        var myAjaxObj = new MyAjax();
+
+        var doc = document;
+        var topicTitle = doc.getElementById("topic-title").value;
+        var topicContent = UE.getEditor('container').getContent();
+
+        var data = "action=publish" +"&title=" + topicTitle + "&content=" + topicContent;
+
+        if(topicTitle.length < 2 || topicTitle.length > 100)
+        {
+            alert("标题在2到20字符之间");
+            return;
+        }
+
+        console.log(data);
+        myAjaxObj.post("/php/blog.php",data,function(result){
+
+            console.log("文章发布返回结果: "+result);
+
+             var jsonData= eval('('+ result+')');
+
+            if(jsonData && jsonData["succeed"]==1)
+            {
+                alert(jsonData["msg"]);
+                window.location.href = "/index.html";
+            }
+            else
+            {
+                alert(jsonData["msg"]);
+            }
+        })
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../css/frameset.css" type="text/css" rel="stylesheet">
+    <script src="/js/ajaxFile.js"></script>
+    <script src="/js/userCenter.js"></script>
+    <title>个人中心</title>
+
+    <style>
+
+        .in-user-left
+        {
+            /*height: 296px;*/
+            width: 250px;
+            display:inline-block;
+            background-color: white;
+            vertical-align: top;
+        }
+
+        .in-user-right
+        {
+            display: inline-block;
+            min-height: 500px;
+            background-color: white;
+            margin-bottom: 10px;
+            padding: 10px 10px 0px 10px;
+            margin-left: 40px;
+            width: 780px;
+            vertical-align: top;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<!--#include file="header.html"-->
+<div class="main-content">
+    <div class="content">
+        <div id="minddle-box">
+
+
+            <div class="in-user-left common-box-shadow" >
+                <div style="padding: 10px;">
+                    <a><img id="user-info1" src="/img/head/head0.jpg" width="88px" height="80px" ></a>
+                    <a style="float: right; padding: 10px;cursor: pointer;margin-top: 20px;" class="common-a-s1">关注</a>
+                    <input id="file-id" type="file" value="" onchange="UpladFile()">
+                </div>
+                <div>
+                    <div class="common-head-bar-s1">
+                        <p>个人信息</p>
+                    </div>
+
+                    <ul class="common-group-list" style="text-align: left;">
+                        <li><a id="user-info2" class="common-a-s2">zard</a></li>
+                        <li><a id="user-info3" class="common-a-s2">注册日期: 2016-2-30</a></li>
+                        <li><a id="user-info4" class="common-a-s2">文章: 20</a></li>
+                        <li><a id="user-info5" class="common-a-s2">回复: 20</a></li>
+                        <li><a id="user-info6" class="common-a-s2">最近登入: 2016-3-11</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="in-user-right common-box-shadow" >
+
+                <div class="common-div-menu" style="border-bottom: 1px solid gray; padding-bottom: 5px;">
+                    <ul id="tab-menu" class="common-menu">
+                        <li id="tab-0" class="common-tab-btn common-tab-btn-active" onclick="onTabClick(0)">设置</li>
+                        <li id="tab-1" class="common-tab-btn" onclick="onTabClick(1)">文章</li>
+                        <li id="tab-2" class="common-tab-btn" onclick="onTabClick(2)">回复</li>
+                    </ul>
+                </div>
+
+                <div id="user-info" style="display: block; height: 400px;">
+                    <!--<p>账号：等待实现</p>-->
+                    <!--<p>邮箱：等待实现</p>-->
+                    <!--<p>密码设置：等待实现</p>-->
+                    <!--<br>-->
+                    <h1>该功能等待实现</h1>
+                    <!--<form id="upload_head_form" action="/php/uploadHeadImg.php" enctype="multipart/form-data" method="post" name="upform">-->
+                        <!--简单头像上传:-->
+                        <!--<input name="upfile" type="file">-->
+                        <!--<input type="submit" value="上传" name="action" onclick="return onTest(upload_head_form.file.filename)"><br>-->
+
+                    <!--</form>-->
+                    <!--<form id="upload_head_form">-->
+                        <!--简单头像上传:-->
+                        <!--<input id="file-select" name="upfile" type="file">-->
+                        <!--<input type="submit" value="上传" name="action" onclick="return onTestAjax()"><br>-->
+
+                    <!--</form>-->
+                </div>
+
+
+                <div id="topic-list" style="display: none; height: 400px;">
+                    <ul id="cell-1" class="common-group-list" style="text-align: left;">
+                        <!--<li><a class="common-a-s1" style="cursor: pointer;">文章管理 等待下个版本实现</a></li>-->
+                    </ul>
+                </div>
+
+                <div id="reply-list" style="display: none;height: 400px;">
+                    <ul id="cell-2" class="common-group-list" style="text-align: left;">
+                        <!--<li><div class="common-black-charater">回复管理 等待下个版本实现</div></li>-->
+                    </ul>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div id="blank-box"></div>
+    </div>
+
+</div>
+
+<!--#include file="footer.html" -->
+
+
+<script>
+    function onTest(fileName)
+    {
+        alert("hahaa..."+fileName);
+    }
+</script>
+
+
+
+</body>
+</html>

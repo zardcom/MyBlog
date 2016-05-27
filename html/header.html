@@ -1,0 +1,50 @@
+
+<script src="/js/login.js"></script>
+<script src="/js/myAjax.js"></script>
+
+<div id="header" class="header common-box-shadow">
+
+    <div id="headerBar" class="header-content">
+
+        <div class="logo"><a href="/index.html"><img src="/img/sparrow.jpg" width="48px" height="48px"></a></div>
+
+        <div class="navigation div-a-s1">
+            <ul class="common-hor-list">
+                <li>
+                    <a href="index.html">首页</a>
+                </li>
+                <li>
+                    <a href="/html/stuffShow.html">酷站</a>
+                </li>
+                <li>
+                    <a href="/html/stuffShow.html">作品展示</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="no-login" class="navigation-right div-a-s1" style="display:block;">
+            <ul class="common-hor-list">
+                <li> <a href="/html/login.html">登入</a></li>
+                <li> <a href="/html/register.html">注册</a></li>
+            </ul>
+        </div>
+
+        <div id="is-login" class="navigation-right div-a-s1" style="display: none;">
+            <ul class="common-hor-list">
+                <li> <a id="userLoginName" href="/html/userCenter.html">用户1</a></li>
+                <li> <a href="javascript:outLogin()">退出</a></li>
+            </ul>
+        </div>
+
+        <div class="search">
+            <form onsubmit="return dispatch()">
+                <input type="text" maxlength="50" name="q" id="q" value="" placeholder="搜索内容" onblur="this.placeholder='搜索内容'" onfocus="this.placeholder=''">
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div style="height: 70px;width: 100%;"></div>
